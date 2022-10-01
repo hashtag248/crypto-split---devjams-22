@@ -55,7 +55,7 @@ Wallet for all by all.
 ## About The Project
 
 
-The project is based on Multiple signature wallet for friends and families. Allowing for smooth transaction process integrated with chat rooms and video call facilities to discuss the agenda .
+The project is based on Multiple signature wallet for friends and families. Allowing for smooth transaction process integrated with chat rooms facilities to discuss the agenda .
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

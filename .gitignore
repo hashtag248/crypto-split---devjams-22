@@ -2,7 +2,9 @@
 
 # dependencies
 /node_modules
+/hardhat-stuff/node_modules
 /.pnp
+/server/node_modules
 .pnp.js
 
 # testing

@@ -11,10 +11,49 @@ import Chat from "./components/Chat/Chat";
 import * as io from "socket.io-client";
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "./store/ui-slice";
+import '@rainbow-me/rainbowkit/styles.css';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
+
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+} from '@rainbow-me/rainbowkit';
+import {
+  chain,
+  configureChains,
+  createClient,
+  WagmiConfig,
+} from 'wagmi';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
+
+
+const { chains, provider } = configureChains(
+  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum, chain.goerli],
+  [
+    alchemyProvider({ apiKey: "UKPqh_wm4TzJvPU_Chu73wL4W80D3NBO" }),
+    publicProvider()
+  ]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: 'My RainbowKit App',
+  chains
+});
+
+const wagmiClient = createClient({
+  autoConnect: true,
+  connectors,
+  provider
+})
+ 
+
 
 const socket = io.connect("http://localhost:3001");
 
 function App() {
+  
   const dispatch = useDispatch();
   const successToast = useSelector((state) => state.ui.successToast) || false;
   const failureToast = useSelector((state) => state.ui.failureToast) || false;

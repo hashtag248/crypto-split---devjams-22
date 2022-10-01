@@ -9,14 +9,18 @@ const authSlice = createSlice({
   },
   reducers: {
     async signup(state, action) {
-      const email = action.payload.email;
-      const name = action.payload.name;
-      const id = action.payload.id;
-      const password = action.payload.password;
+      try {
+        const email = action.payload.email;
+        const name = action.payload.name;
+        const id = action.payload.id;
+        const password = action.payload.password;
 
-      const response = await account.create(id, email, password, name);
-      await account.createEmailSession(email, password);
-      return response;
+        const response = await account.create(id, email, password, name);
+        await account.createEmailSession(email, password);
+        return response;
+      } catch (e) {
+        console.log(e);
+      }
     },
     async login(state, action) {
       try {

@@ -53,6 +53,14 @@ function SignUp(props) {
     const name = `${firstName} ${lastName}`;
     // dispatch(authActions.signup({ id: uuidv4(), email, password, name }));
     try {
+      if (
+        email === "" ||
+        password === "" ||
+        name === "" ||
+        firstName === "" ||
+        lastName === ""
+      )
+        return;
       // const response = await account.create(uuidv4(), email, password, name);
       const data = dispatch(
         authActions.signup({

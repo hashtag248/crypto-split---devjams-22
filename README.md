@@ -157,7 +157,7 @@ Your Name - Samarth Saxena - email@example.com
 Your Name - Harshal Ranjhani - email@example.com
 Your Name - Harshit Singh - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/harshalranjhani/crypto-split---devjams-22](https://github.com/harshalranjhani/crypto-split---devjams-22)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
